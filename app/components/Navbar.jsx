@@ -64,6 +64,15 @@ export default function Navbar()
           }
         </div>
 
+        {/* Smaller screens - Navbar */}
+        <div className={menuIcon ? 
+            'md:hidden absolute top-[100px] right-0 bottom-0 left-0 flex justify-center items-center w-full h-screen bg-slate-800 text-white ease-in duration-300' 
+            : 
+            'md:hidden absolute top-[100px] right-0 left-[-100%] flex justify-center items-center w-full h-screen bg-slate-800 text-white text-center ease-in duration-300'
+        }>
+          smaller screens navbar
+        </div>
+
       </nav>  
     </header>
   )
