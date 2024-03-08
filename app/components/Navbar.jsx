@@ -70,8 +70,32 @@ export default function Navbar()
             : 
             'md:hidden absolute top-[100px] right-0 left-[-100%] flex justify-center items-center w-full h-screen bg-slate-800 text-white text-center ease-in duration-300'
         }>
-          smaller screens navbar
+          
+
+          {/* Smaller screens - Navbar links */}
+          <div className="w-full">
+            
+            <ul className='uppercase font-bold text-2xl'>
+
+              <li onClick={handleSmallerScreensNavigation} className='py-5 hover:text-[#CEFF00] cursor-pointer'>
+                <Link href="/">home</Link>
+              </li>
+
+              <li onClick={handleSmallerScreensNavigation} className='py-5 hover:text-[#CEFF00] cursor-pointer'>
+                <Link href="/about">about</Link>
+              </li>
+
+              <li onClick={handleSmallerScreensNavigation} className='py-5 hover:text-[#CEFF00] cursor-pointer'>
+                <Link href="/contact">contact</Link>
+              </li>
+
+            </ul>
+
+
+          </div>
+
         </div>
+
 
       </nav>  
     </header>
