@@ -7,14 +7,14 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 export default function Navbar() 
 {
 
-  const [menuIcon, setIcon] = useState(false);
+  const [menuIcon, setIcon] = useState( false );
 
   const handleSmallerScreensNavigation = () =>
   {
     setIcon( !menuIcon );
   }
 
-  return(
+  return (
     <header className="bg-slate-400 text-[#CEFF00] w-full ease-in duration-300 fixed top-0 left-0 z-10">
       <nav className="max-w-[1366px] mx-auto h-[100px] flex justify-between items-center p-4">
         <div>
@@ -26,11 +26,44 @@ export default function Navbar()
         {/* larger screens navigation */}
         <ul className="hidden md:flex uppercase font-semibold text-1xl lg:text-[20px] text-slate-800">
           
-          <li className="">
-            <Link href="/home">home</Link>
+          <li className="mr-4 lg:mr-8 hover:text-[#CEFF00]">
+            <Link href="/">home</Link>
+          </li>
+
+          <li className="mr-4 lg:mr-8 hover:text-[#CEFF00]">
+            <Link href="/about">about</Link>
+          </li>
+
+          <li className="hover:text-[#CEFF00]">
+            <Link href="/contact">contact</Link>
           </li>
 
         </ul>
+
+        <div className="hidden md:flex">
+            <div className="flex">
+              
+              <Link href="/login">
+                <button className="mr-5 bg-[#CEFF00] text-slate-800 hover:bg-slate-800 hover:text-[#CEFF00] rounded-full uppercase font-bold px-8 py-2">login</button>
+              </Link>
+
+              <Link href="/signup">
+                <button className="border-2 border-[#CEFF00] text-white rounded-full uppercase font-bold px-8 py-2">sign up</button>
+              </Link>
+
+            </div>
+        </div>
+
+        {/* smaller screens - navigation icons */}
+        {/* onClick change the icon */}
+        <div onClick={handleSmallerScreensNavigation} className='flex md:hidden'>
+          {menuIcon ? 
+            ( <AiOutlineClose size={25} className='text-[#CEFF00]' />)
+            :
+            ( <AiOutlineMenu size={25} className='text-[#CEFF00]' /> )
+          }
+        </div>
+
       </nav>  
     </header>
   )
