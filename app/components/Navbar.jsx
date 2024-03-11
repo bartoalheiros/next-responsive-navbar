@@ -66,7 +66,7 @@ export default function Navbar()
 
         {/* Smaller screens - Navbar */}
         <div className={menuIcon ? 
-            'md:hidden absolute top-[100px] right-0 bottom-0 left-0 flex justify-center items-center w-full h-screen bg-slate-800 text-white ease-in duration-300' 
+            'md:hidden absolute top-[100px] right-0 bottom-0 left-0 flex justify-center items-center w-full h-screen bg-slate-800 text-white text-center ease-in duration-300' 
             : 
             'md:hidden absolute top-[100px] right-0 left-[-100%] flex justify-center items-center w-full h-screen bg-slate-800 text-white text-center ease-in duration-300'
         }>
@@ -91,6 +91,17 @@ export default function Navbar()
 
             </ul>
 
+            <div className='flex flex-col justify-center items-center mt-16'>
+              
+              <Link href="/login" onClick={handleSmallerScreensNavigation}>
+                <button className="bg-[#CEFF00] text-slate-800 rounded-full uppercase font-bold py-3 w-[250px] mb-5">login</button>
+              </Link>
+
+              <Link href="/signup" onClick={handleSmallerScreensNavigation}>
+                <button className="border-2 border-[#CEFF00] text-white rounded-full uppercase font-bold py-3 w-[250px] mb-5">signup</button>
+              </Link>
+
+            </div>
 
           </div>
 
